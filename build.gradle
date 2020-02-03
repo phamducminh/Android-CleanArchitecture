@@ -5,10 +5,10 @@ buildscript {
   repositories {
     jcenter()
     mavenCentral()
+      google()
   }
   dependencies {
-    classpath 'com.android.tools.build:gradle:2.1.0'
-    classpath 'com.neenbedankt.gradle.plugins:android-apt:1.4'
+    classpath 'com.android.tools.build:gradle:3.6.0-rc02'
     classpath "com.fernandocejas.frodo:frodo-plugin:0.8.3"
   }
 }
@@ -21,6 +21,10 @@ allprojects {
     testInstrumentationRunner = "android.support.test.runner.AndroidJUnitRunner"
     testApplicationId = 'com.fernandocejas.android10.sample.app.test'
   }
+}
+
+repositories {
+  google()
 }
 
 task runUnitTests(dependsOn: [':app:cleanTestDebugUnitTest', ':app:testDebugUnitTest']) {

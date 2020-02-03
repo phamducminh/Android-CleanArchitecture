@@ -5,10 +5,11 @@
 package com.fernandocejas.android10.sample.app.users;
 
 import android.content.Context;
-import android.support.v7.widget.LinearLayoutManager;
+
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 /**
- * Layout manager to position items inside a {@link android.support.v7.widget.RecyclerView}.
+ * Layout manager to position items inside a {@link androidx.recyclerview.widget.LinearLayoutManager}.
  */
 class UsersLayoutManager extends LinearLayoutManager {
   UsersLayoutManager(Context context) {

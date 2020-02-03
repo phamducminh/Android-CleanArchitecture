@@ -5,12 +5,15 @@
 package com.fernandocejas.android10.sample.app.users;
 
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import butterknife.Bind;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import com.fernandocejas.android10.sample.app.R;
 import java.util.Collection;
@@ -43,7 +46,7 @@ class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.UserViewHolder> {
     return (this.usersCollection != null) ? this.usersCollection.size() : 0;
   }
 
-  @Override public UserViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+  @Override public UserViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
     final View view = this.layoutInflater.inflate(R.layout.row_user, parent, false);
     return new UserViewHolder(view);
   }
@@ -79,7 +82,7 @@ class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.UserViewHolder> {
   }
 
   static class UserViewHolder extends RecyclerView.ViewHolder {
-    @Bind(R.id.title) TextView textViewTitle;
+    @BindView(R.id.title) TextView textViewTitle;
 
     UserViewHolder(View itemView) {
       super(itemView);
